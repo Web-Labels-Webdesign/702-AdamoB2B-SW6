@@ -1,0 +1,8 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-category-navigation.html.twig' %}
+
+{% block element_category_navigation_element %}
+    <div class="d-lg-block d-none h2 bg-black text-white filter-head p-2 fw-normal">
+        {{ 'wlcustom.shop'|trans }}
+    </div>
+    {{ parent() }}
+{% endblock %}

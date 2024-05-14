@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-sidebar-filter.html.twig' %}
+
+{% block element_product_listing_filter_button %}
+    {% if listing.aggregations.elements.properties.entities|length %}
+        <div class="d-lg-block d-none h2 bg-black text-white filter-head p-2 fw-normal">
+            {{ 'listing.filterTitleText'|trans }}
+        </div>
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
