@@ -1,0 +1,50 @@
+.product-box {
+    border: none;
+    transition: 500ms;
+    &:hover {
+        box-shadow: 0px 0px 10px 3px #dfdfdf;
+        .product-action {
+            .d-grid {
+                top: 0;
+                opacity: 1;
+            }   
+        }
+    }
+    &.box-image {
+        .product-image-link.is-cover {
+            align-items: center;
+            &:hover {
+                .product-image {
+                    transform: scale(1.05);
+                }
+            }
+            .product-image {
+                height: auto;
+                width: auto;
+                transition: 500ms;
+            }
+        }
+    }   
+    .product-action {
+        overflow: hidden;
+        position: relative;
+        height: 40px;
+        .d-grid {
+            opacity: 0;
+            top: 100%;
+            transition: 300ms;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+.product-badges {
+    left: 16px;
+    .badge {
+        border-radius: 3px;
+        line-height: 1.2;
+        height: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+} 

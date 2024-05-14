@@ -1,0 +1,18 @@
+.nav-main {
+    border-bottom: 1px solid $sw-color-brand-primary;
+}
+.main-navigation-menu {
+    justify-content: center;
+    padding-bottom: 6px;
+    .main-navigation-link {
+        padding: 4px 16px;
+        &.active {
+            color: #fff;
+            background-color: $sw-color-brand-secondary;
+        }
+        .main-navigation-link-text {
+            border: none;
+            padding: 0;
+        }
+    }
+}
