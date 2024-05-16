@@ -53,3 +53,11 @@
         height: 100%;
     }
 }
+.cms-element-product-slider {
+    .product-slider, .tns-ovh {
+        overflow: visible;
+    }
+    .tns-outer {
+        padding: 0 20px!important;
+    }
+}
