@@ -4,5 +4,92 @@
     <h1 class="product-detail-name" itemprop="name">
         {{ page.product.translated.name}}
     </h1>
-    {{ parent() }}
+    {% if product.productNumber %}
+        <div class="mb-2">
+            <strong >
+                {{ "detail.productNumberLabel"|trans|sw_sanitize }}
+            </strong>
+            <meta itemprop="productID"
+                    content="{{ product.id }}"/>
+            <span class="product-detail-ordernumber"
+                    itemprop="sku">
+                {{ product.productNumber }}
+            </span>
+        </div>
+    {% endif %}
+    {% if product.sortedProperties|length > 0 %}
+        {% for group in product.sortedProperties %}
+            {% if group.customFields.custom_property_top_check %}
+                <div class="mb-2">
+                    <strong>{{ group.translated.name|e }}:</strong>
+                    <span>
+                        {% apply spaceless %}
+                            {% for option in group.options %}
+                                {% set i = ( i | default(0) ) + 1 %}
+                                <span>{% if i > 1 %}, {% endif %}
+                                    {% if group.customFields.custom_property_top_pflege %}
+                                        <img class="care-symbol" src="/pflegesymbole/{{ option.translated.name|e }}">
+                                    {% else %}
+                                        {{ option.translated.name|e }}
+                                    {% endif %}
+                                </span>
+                            {% endfor %}
+                        {% endapply %}
+                    </span>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_ordernumber_container %}
+    
+{% endblock %}
+
+{% block buy_widget_price %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_tax %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_delivery_informations %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_configurator_include %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_buy_form %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% else %}
+        <p>
+            <div>{{ 'wlcustom.companytext'|trans }} </div>
+            <a href="/shop-service/haendler-werden/" class="btn btn-primary" title="Adamo Händler werden">{{ 'wlcustom.companybutton'|trans }}</a>
+        </p>
+        <p>
+            <div>{{ 'wlcustom.nocompanytext'|trans }}</div> 
+            <a href="https://www.adamo.eu/" class="btn btn-light" title="Adamo Privatkunden">{{ 'wlcustom.privateshopbutton'|trans }}</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_wishlist %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
 {% endblock %}

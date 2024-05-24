@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/biloba/article-variant-order-matrix/article-variant-order-matrix-input-fields.html.twig' %}
+
+{% block biloba_variant_matrix_quantity_wrapper %}
+    {{ parent() }}
+    <span class="delivery-status-indicator {% if condition == "disabled" %}bg-danger{% else %}bg-success{% endif %}"></span>
+    <div class="variant-price">
+        {{ variantPrice|currency }}
+    </div>
+{% endblock %}

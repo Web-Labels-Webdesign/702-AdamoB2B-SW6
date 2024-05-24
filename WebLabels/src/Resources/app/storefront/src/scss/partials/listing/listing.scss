@@ -7,6 +7,34 @@
 .cms-block-product-listing {
     overflow: visible;
 }
+.category-navigation {
+    padding: 0;
+    .category-navigation-link {
+        transition: 300ms;
+        &:hover {
+            background-color: $light-gray;
+        }
+        &.in-path, &.is-active {
+            background-color: $light-gray;
+        }
+    }
+    &.level-1 {
+        .category-navigation-link {
+            padding-left: 40px;
+        }
+    }
+    &.level-2 {
+        .category-navigation-link {
+            padding-left: 60px;
+        }
+    }
+    &.level-3 {
+        .category-navigation-link {
+            padding-left: 80px;
+        }
+    }
+}
+
 
 @include media-breakpoint-up(lg) {
     .cms-element-product-listing-actions {

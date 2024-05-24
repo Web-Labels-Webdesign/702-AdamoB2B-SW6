@@ -5,3 +5,15 @@
 
 {% block component_product_box_description %}
 {% endblock %}
+
+{% block component_product_box_price %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block component_product_box_action %}
+    {% if context.currentCustomerGroup.customFields.custom_customer_buy_true %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

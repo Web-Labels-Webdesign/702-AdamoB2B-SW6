@@ -1,0 +1,21 @@
+{% sw_extends '@Storefront/storefront/biloba/article-variant-order-matrix/article-variant-order-matrix-standard-table.html.twig' %}
+
+{% block biloba_variant_matrix_body_not_one_variant_y_orientation_variant_image %}
+    <td scope="col">
+        {% set media = tmpVariantElement.media.elements|sort((a, b) => a.position <=> b.position) %}
+        {% if media %}
+        <div class="variant-options media">
+            <img 
+                src="{{ ((media|first).media.thumbnails.elements|first).url }}"
+                {% if config("BilobaArticleVariantOrderMatrix.config.layoutStandardChangeImageOnYAxis") %}data-attribute-change-image="true" data-attribute-change-image-options="{{ imageChangeConfig|json_encode }}"{% endif %} 
+                data-bit-variant-id="{{ tmpVariantId }}" 
+                class="product-detail-configurator-option-image bit-variant-opt-img {% if config("BilobaArticleVariantOrderMatrix.config.layoutStandardChangeImageOnYAxis") %}is-link{% endif %}"
+                alt="{{ secondGroupOption.translated.name }}"
+                title="{{ secondGroupOption.translated.name }}" />
+        </div>
+        {% endif %}
+        <div class="variant-option-name" align="center">
+            {{ secondGroupOption.translated.name }}
+        </div>
+    </td>
+{% endblock %}

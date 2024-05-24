@@ -1,0 +1,64 @@
+.product-slider-container {
+    padding-bottom: 20px;
+}
+
+.card-tabs {
+    .card-header {
+        border-bottom: 1px solid $sw-color-brand-secondary;
+    }
+
+    .nav-link {
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 3px 3px 0 0;
+        font-size: 16px;
+        &.active {
+            background: $sw-color-brand-secondary;
+            color: #fff;
+        }
+    }
+} 
+.care-symbol {
+    max-height: 27px;
+}
+.product-wishlist-added .icon-wishlist-not-added, .product-wishlist-added .text-wishlist-not-added {
+    display: block;
+}
+#biloba-variant-matrix-formular {
+    padding-bottom: 40px;
+}
+.biloba-variant-matrix-table td .variant-options.media .product-detail-configurator-option-image.bit-variant-opt-img {
+    width: 80px;
+    border: none;
+    border-radius: 0;
+}
+.biloba-variant-matrix-quantity-block {
+    position: relative;
+    .delivery-status-indicator {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+    }
+}
+.variant-matrix-quantity-wrapper {
+    input {
+        padding-left: 30px;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 100%;
+            background-clip: padding-box;
+            display: inline-block;
+            height: 10px;
+            line-height: 10px;
+            margin-right: 5px;
+            position: relative;
+            width: 10px;
+            background-color: $sw-color-success;
+        }
+    }
+}
