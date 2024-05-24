@@ -41,6 +41,20 @@
         bottom: unset;
         top: 1rem; 
     }
+    .cbax-preview-image-hover {
+        border: none!important;
+    }
+    &.has-cbax-preview-image-hover:hover.cbax-preview-image-hover-outside.cbax-hovereffect-shadow .cbax-preview-image-hover {
+        top: 0;
+        height: 100%;
+        border: none;
+        .cms-element-image-gallery {
+            height: 100%;
+            .gallery-slider-row {
+                height: 100%;
+            }
+        }
+    }
 }
 .product-badges {
     left: 16px;

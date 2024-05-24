@@ -16,3 +16,10 @@
         }
     }
 }
+
+.header-cart-badge {
+    display: block;
+}
+.header-cart .header-cart-badge, .header-wishlist .header-wishlist-badge {
+    top: 0;
+}
